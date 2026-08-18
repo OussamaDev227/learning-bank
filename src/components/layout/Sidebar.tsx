@@ -14,12 +14,12 @@ import {
 import { Link } from 'react-router-dom'
 
 const tools = [
-  { label: 'تحليل النصوص', icon: ScanText, to: null },
+  { label: 'تحليل النصوص', icon: ScanText, to: '/tools/analyze' },
   { label: 'استخراج الكلمات', icon: FileSearch, to: null },
-  { label: 'التشكيل والتدقيق', icon: SpellCheck, to: null },
+  { label: 'التشكيل والتدقيق', icon: SpellCheck, to: '/tools/proofread' },
   { label: 'القاموس الذكي', icon: BookOpenCheck, to: '/dictionary' },
   { label: 'إعراب الجمل', icon: NotebookText, to: '/tools/i3rab' },
-  { label: 'ترجمة النصوص', icon: Languages, to: null },
+  { label: 'ترجمة النصوص', icon: Languages, to: '/tools/translate' },
   { label: 'تحويل النص إلى صوت', icon: Volume2, to: null },
   { label: 'إنشاء اختبارات', icon: ListChecks, to: null },
   { label: 'إدارة المراجع', icon: FolderCog, to: null },

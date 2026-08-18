@@ -23,6 +23,9 @@ import { DictionaryManager } from './routes/admin/DictionaryManager'
 import { Library } from './routes/Library'
 import { LibraryManager } from './routes/admin/LibraryManager'
 import { SentenceParsing } from './routes/SentenceParsing'
+import { TextAnalysis } from './routes/TextAnalysis'
+import { Proofreading } from './routes/Proofreading'
+import { Translation } from './routes/Translation'
 
 function App() {
   return (
@@ -50,6 +53,9 @@ function App() {
           <Route path="/dictionary" element={<AppLayout><DictionarySearch /></AppLayout>} />
           <Route path="/library" element={<AppLayout><Library /></AppLayout>} />
           <Route path="/tools/i3rab" element={<AppLayout><SentenceParsing /></AppLayout>} />
+          <Route path="/tools/analyze" element={<AppLayout><TextAnalysis /></AppLayout>} />
+          <Route path="/tools/proofread" element={<AppLayout><Proofreading /></AppLayout>} />
+          <Route path="/tools/translate" element={<AppLayout><Translation /></AppLayout>} />
 
           <Route
             path="/admin"
