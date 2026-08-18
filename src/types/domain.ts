@@ -71,3 +71,16 @@ export interface DictionaryEntry {
   is_published: boolean
   created_at: string
 }
+
+export type LibraryResourceType = 'كتاب' | 'مقال' | 'رسالة جامعية' | 'معجم رقمي'
+
+export interface LibraryResource {
+  id: string
+  title: string
+  description: string | null
+  author: string | null
+  resource_type: LibraryResourceType
+  file_url: string
+  is_published: boolean
+  created_at: string
+}

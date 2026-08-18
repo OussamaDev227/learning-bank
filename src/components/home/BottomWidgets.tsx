@@ -57,19 +57,20 @@ function LearningPathWidget() {
 
 function DigitalLibraryWidget() {
   return (
-    <Card className="relative">
-      <ComingSoonBadge />
-      <div className="flex items-center gap-2 mb-1">
-        <Library size={16} className="text-primary-600" />
-        <p className="font-extrabold text-sm">المكتبة الرقمية</p>
-      </div>
-      <ul className="text-[11px] text-text-muted space-y-1 mt-2">
-        <li>كتب</li>
-        <li>مقالات</li>
-        <li>رسائل جامعية</li>
-        <li>معاجم رقمية</li>
-      </ul>
-    </Card>
+    <Link to="/library">
+      <Card className="h-full hover:border-primary-200 border border-transparent">
+        <div className="flex items-center gap-2 mb-1">
+          <Library size={16} className="text-primary-600" />
+          <p className="font-extrabold text-sm">المكتبة الرقمية</p>
+        </div>
+        <ul className="text-[11px] text-text-muted space-y-1 mt-2">
+          <li>كتب</li>
+          <li>مقالات</li>
+          <li>رسائل جامعية</li>
+          <li>معاجم رقمية</li>
+        </ul>
+      </Card>
+    </Link>
   )
 }
 

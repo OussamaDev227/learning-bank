@@ -19,6 +19,8 @@ import { LessonsManager } from './routes/admin/LessonsManager'
 import { QuizzesManager } from './routes/admin/QuizzesManager'
 import { UsersManager } from './routes/admin/UsersManager'
 import { DictionaryManager } from './routes/admin/DictionaryManager'
+import { Library } from './routes/Library'
+import { LibraryManager } from './routes/admin/LibraryManager'
 
 function App() {
   return (
@@ -43,6 +45,7 @@ function App() {
           />
           <Route path="/banks/:slug" element={<AppLayout><BankCourses /></AppLayout>} />
           <Route path="/dictionary" element={<AppLayout><DictionarySearch /></AppLayout>} />
+          <Route path="/library" element={<AppLayout><Library /></AppLayout>} />
 
           <Route
             path="/admin"
@@ -58,6 +61,7 @@ function App() {
             <Route path="lessons/:lessonId/quiz" element={<QuizzesManager />} />
             <Route path="users" element={<UsersManager />} />
             <Route path="dictionary" element={<DictionaryManager />} />
+            <Route path="library" element={<LibraryManager />} />
           </Route>
         </Routes>
       </AuthProvider>
