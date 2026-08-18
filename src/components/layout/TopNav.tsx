@@ -6,8 +6,8 @@ import { useAuth } from '../../lib/auth'
 
 const navItems = [
   { label: 'تعلم العربية', to: '/learn', active: true },
-  { label: 'البنوك الغنية', to: '#', active: false },
-  { label: 'المكتبة الرقمية', to: '#', active: false },
+  { label: 'البنوك الغنية', to: '/banks', active: true },
+  { label: 'المكتبة الرقمية', to: '/library', active: true },
   { label: 'الأكاديمية', to: '#', active: false },
   { label: 'المساعد الذكي', to: '#', active: false },
 ]

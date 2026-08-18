@@ -7,7 +7,9 @@ export function BanksGrid() {
     <section>
       <div className="flex items-center justify-between mb-3">
         <h2 className="font-extrabold text-lg text-text-primary">بنوك علوم اللغة العربية</h2>
-        <button className="text-primary-600 text-sm font-bold">عرض الكل &lt;</button>
+        <Link to="/banks" className="text-primary-600 text-sm font-bold">
+          عرض الكل &lt;
+        </Link>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
