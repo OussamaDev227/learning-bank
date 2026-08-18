@@ -22,6 +22,7 @@ import { UsersManager } from './routes/admin/UsersManager'
 import { DictionaryManager } from './routes/admin/DictionaryManager'
 import { Library } from './routes/Library'
 import { LibraryManager } from './routes/admin/LibraryManager'
+import { SentenceParsing } from './routes/SentenceParsing'
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="/banks/:slug" element={<AppLayout><BankCourses /></AppLayout>} />
           <Route path="/dictionary" element={<AppLayout><DictionarySearch /></AppLayout>} />
           <Route path="/library" element={<AppLayout><Library /></AppLayout>} />
+          <Route path="/tools/i3rab" element={<AppLayout><SentenceParsing /></AppLayout>} />
 
           <Route
             path="/admin"

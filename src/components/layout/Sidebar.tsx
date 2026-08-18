@@ -18,7 +18,7 @@ const tools = [
   { label: 'استخراج الكلمات', icon: FileSearch, to: null },
   { label: 'التشكيل والتدقيق', icon: SpellCheck, to: null },
   { label: 'القاموس الذكي', icon: BookOpenCheck, to: '/dictionary' },
-  { label: 'إعراب الجمل', icon: NotebookText, to: null },
+  { label: 'إعراب الجمل', icon: NotebookText, to: '/tools/i3rab' },
   { label: 'ترجمة النصوص', icon: Languages, to: null },
   { label: 'تحويل النص إلى صوت', icon: Volume2, to: null },
   { label: 'إنشاء اختبارات', icon: ListChecks, to: null },
