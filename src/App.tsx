@@ -10,6 +10,7 @@ import { CourseList } from './routes/learn/CourseList'
 import { CourseDetail } from './routes/learn/CourseDetail'
 import { LessonView } from './routes/learn/LessonView'
 import { QuizPlayer } from './routes/learn/QuizPlayer'
+import { BankCourses } from './routes/banks/BankCourses'
 import { AdminLayout } from './routes/admin/AdminLayout'
 import { AdminOverview } from './routes/admin/AdminOverview'
 import { CoursesManager } from './routes/admin/CoursesManager'
@@ -38,6 +39,7 @@ function App() {
             path="/learn/:courseId/:lessonId/quiz"
             element={<AppLayout><QuizPlayer /></AppLayout>}
           />
+          <Route path="/banks/:slug" element={<AppLayout><BankCourses /></AppLayout>} />
 
           <Route
             path="/admin"

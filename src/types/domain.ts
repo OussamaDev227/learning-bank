@@ -14,6 +14,7 @@ export interface Course {
   title: string
   description: string | null
   cover_image_url: string | null
+  category: string
   order_index: number
   is_published: boolean
   created_at: string

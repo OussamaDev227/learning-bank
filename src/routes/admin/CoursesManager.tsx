@@ -4,9 +4,19 @@ import { Pencil, Trash2 } from 'lucide-react'
 import { Card } from '../../components/ui/Card'
 import { Button } from '../../components/ui/Button'
 import { supabase } from '../../lib/supabaseClient'
+import { banks, CATEGORY_GENERAL } from '../../lib/banks'
 import type { Course } from '../../types/domain'
 
-const emptyForm = { id: '', title: '', description: '', order_index: 0, is_published: false }
+const categoryOptions = [CATEGORY_GENERAL, ...banks.map((b) => b.label)]
+
+const emptyForm = {
+  id: '',
+  title: '',
+  description: '',
+  category: CATEGORY_GENERAL,
+  order_index: 0,
+  is_published: false,
+}
 
 export function CoursesManager() {
   const [courses, setCourses] = useState<Course[]>([])
@@ -31,6 +41,7 @@ export function CoursesManager() {
       id: c.id,
       title: c.title,
       description: c.description ?? '',
+      category: c.category,
       order_index: c.order_index,
       is_published: c.is_published,
     })
@@ -46,6 +57,7 @@ export function CoursesManager() {
         .update({
           title: form.title,
           description: form.description || null,
+          category: form.category,
           order_index: form.order_index,
           is_published: form.is_published,
         })
@@ -54,6 +66,7 @@ export function CoursesManager() {
       await supabase.from('courses').insert({
         title: form.title,
         description: form.description || null,
+        category: form.category,
         order_index: form.order_index,
         is_published: form.is_published,
       })
@@ -90,6 +103,20 @@ export function CoursesManager() {
             onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
             className="w-full bg-page rounded-xl px-4 py-2.5 text-sm outline-none min-h-20"
           />
+          <label className="flex items-center gap-2 text-sm text-text-muted">
+            البنك
+            <select
+              value={form.category}
+              onChange={(e) => setForm((f) => ({ ...f, category: e.target.value }))}
+              className="bg-page rounded-lg px-3 py-1.5 text-sm outline-none"
+            >
+              {categoryOptions.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </label>
           <div className="flex items-center gap-4">
             <label className="flex items-center gap-2 text-sm text-text-muted">
               الترتيب
@@ -128,7 +155,7 @@ export function CoursesManager() {
             <div className="flex-1 min-w-0">
               <p className="font-bold text-text-primary">{c.title}</p>
               <p className="text-xs text-text-muted">
-                {c.is_published ? 'منشورة' : 'مسودة'} · ترتيب {c.order_index}
+                {c.category} · {c.is_published ? 'منشورة' : 'مسودة'} · ترتيب {c.order_index}
               </p>
             </div>
             <Link to={`/admin/courses/${c.id}/lessons`}>
