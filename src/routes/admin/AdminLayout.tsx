@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { LayoutDashboard, LogOut, Menu, Undo2, Users, BookOpen, X } from 'lucide-react'
+import { LayoutDashboard, LogOut, Menu, Undo2, Users, BookOpen, BookOpenCheck, X } from 'lucide-react'
 import { Logo } from '../../components/Logo'
 import { useAuth } from '../../lib/auth'
 
 const navItems = [
   { label: 'نظرة عامة', to: '/admin', icon: LayoutDashboard, end: true },
   { label: 'الدورات والدروس', to: '/admin/courses', icon: BookOpen, end: false },
+  { label: 'القاموس الذكي', to: '/admin/dictionary', icon: BookOpenCheck, end: false },
   { label: 'المستخدمون', to: '/admin/users', icon: Users, end: false },
 ]
 

@@ -60,3 +60,14 @@ export interface QuizAttempt {
   total: number
   completed_at: string
 }
+
+export interface DictionaryEntry {
+  id: string
+  word: string
+  root: string | null
+  part_of_speech: string | null
+  meaning: string
+  examples: string | null
+  is_published: boolean
+  created_at: string
+}

@@ -11,12 +11,14 @@ import { CourseDetail } from './routes/learn/CourseDetail'
 import { LessonView } from './routes/learn/LessonView'
 import { QuizPlayer } from './routes/learn/QuizPlayer'
 import { BankCourses } from './routes/banks/BankCourses'
+import { DictionarySearch } from './routes/DictionarySearch'
 import { AdminLayout } from './routes/admin/AdminLayout'
 import { AdminOverview } from './routes/admin/AdminOverview'
 import { CoursesManager } from './routes/admin/CoursesManager'
 import { LessonsManager } from './routes/admin/LessonsManager'
 import { QuizzesManager } from './routes/admin/QuizzesManager'
 import { UsersManager } from './routes/admin/UsersManager'
+import { DictionaryManager } from './routes/admin/DictionaryManager'
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
             element={<AppLayout><QuizPlayer /></AppLayout>}
           />
           <Route path="/banks/:slug" element={<AppLayout><BankCourses /></AppLayout>} />
+          <Route path="/dictionary" element={<AppLayout><DictionarySearch /></AppLayout>} />
 
           <Route
             path="/admin"
@@ -54,6 +57,7 @@ function App() {
             <Route path="courses/:courseId/lessons" element={<LessonsManager />} />
             <Route path="lessons/:lessonId/quiz" element={<QuizzesManager />} />
             <Route path="users" element={<UsersManager />} />
+            <Route path="dictionary" element={<DictionaryManager />} />
           </Route>
         </Routes>
       </AuthProvider>
